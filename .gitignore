@@ -1,0 +1,5 @@
+venv
+.vscode
+__pycache__
+db.sqlite3
+my_secrets.py
