@@ -1,9 +1,9 @@
 from django.http.response import HttpResponse
 from django.views import View
 
-class HomeView(View):
+class CreateListView(View):
     def get(self, request, *args, **kwargs):
-        return HttpResponse(f'GET request! {request.user.username}')
+        return HttpResponse(f'CREATE LIST form.')
 
     def post(self, request, *args, **kwargs):
-        return HttpResponse('POST request!')
+        return HttpResponse('CREATE list post req.')
