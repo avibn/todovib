@@ -67,6 +67,4 @@ List /list/<id:int>/
 
 
 # To-do:
-1. Forms for list create.
-2. login_required for most of the views.
-3. Login and Signup views. https://docs.djangoproject.com/en/3.2/topics/auth/default/
+1. Login and Signup views. https://docs.djangoproject.com/en/3.2/topics/auth/default/
