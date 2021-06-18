@@ -1,3 +1,4 @@
+from django.http.response import HttpResponseBadRequest
 from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.views import View
@@ -22,3 +23,4 @@ class CreateListView(View):
             )
 
             return redirect(reverse("Home:index"))
+        return HttpResponseBadRequest("Invalid form.")
