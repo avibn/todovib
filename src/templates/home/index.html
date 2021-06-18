@@ -1,0 +1,19 @@
+{% extends 'base/base.html' %}
+
+{% block body %}
+
+        <h1>HOME PAGE</h1>
+
+        <a href="{% url 'Home:create_list' %}">
+        <button type="button">Create List</button>
+        </a>
+
+        {% for list in lists %}
+        <div style="background-color: #fae3a5;">
+            <h2>{{ list.name }}</h2>
+            <h4>{{ list.description }}</h4>
+            <h6>{{ list.created_at|date:"D d M Y" }}</h6>
+        </div>
+        {% endfor %}
+
+{% endblock body %}

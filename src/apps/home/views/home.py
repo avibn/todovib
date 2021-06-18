@@ -1,9 +1,10 @@
-from django.http.response import HttpResponse
-from django.views import View
+from django.views.generic import ListView
+from src.apps.list.models import TodoList
 
-class HomeView(View):
-    def get(self, request, *args, **kwargs):
-        return HttpResponse(f'GET request! {request.user.username}')
 
-    def post(self, request, *args, **kwargs):
-        return HttpResponse('POST request!')
+class HomeView(ListView):
+    context_object_name = "lists"
+    template_name = "home/index.html"
+
+    def get_queryset(self):
+        return TodoList.objects.filter(owner=self.request.user)

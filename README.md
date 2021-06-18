@@ -64,3 +64,9 @@ List /list/<id:int>/
     ---------------------------------------------------------
     P̶O̶S̶T̶ <̶i̶d̶:̶i̶n̶t̶>̶/̶i̶n̶v̶i̶t̶e̶/̶c̶r̶e̶a̶t̶e̶/̶           C̶r̶e̶a̶t̶e̶s̶ a̶n̶ i̶n̶v̶i̶t̶e̶
     P̶O̶S̶T̶ <̶i̶d̶:̶i̶n̶t̶>̶/̶i̶n̶v̶i̶t̶e̶/̶<̶i̶n̶v̶i̶t̶e̶_̶i̶d̶:̶i̶n̶t̶>̶/̶d̶e̶l̶e̶t̶e̶/̶           C̶r̶e̶a̶t̶e̶s̶ a̶n̶ i̶n̶v̶i̶t̶e̶
+
+
+# To-do:
+1. Forms for list create.
+2. login_required for most of the views.
+3. Login and Signup views. https://docs.djangoproject.com/en/3.2/topics/auth/default/

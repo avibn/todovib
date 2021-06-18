@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 
+from django.urls import reverse_lazy
 from src.my_secrets import *
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -126,3 +127,10 @@ STATIC_ROOT = BASE_DIR / 'static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# Extra config
+
+LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = reverse_lazy("Home:login")
+LOGOUT_REDIRECT_URL = reverse_lazy("Home:login")
