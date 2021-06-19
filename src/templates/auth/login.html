@@ -1,0 +1,7 @@
+TEST LOGIn
+
+<form action={% url 'Home:login' %} method="post">
+{% csrf_token %}
+{{ form }}
+<input type="submit">
+</form>

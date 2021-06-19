@@ -1,9 +1,7 @@
 from django.http.response import HttpResponse
 from django.views import View
+from django.contrib.auth import views as auth_views
 
-class LoginView(View):
-    def get(self, request, *args, **kwargs):
-        return HttpResponse(f'Log in form.')
-
-    def post(self, request, *args, **kwargs):
-        return HttpResponse('Log in post req.')
+class LoginView(auth_views.LoginView):
+    template_name = 'auth/login.html'
+    redirect_authenticated_user = True
