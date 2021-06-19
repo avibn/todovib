@@ -1,9 +1,30 @@
-from django.http.response import HttpResponse
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import redirect, render
+from django.urls.base import reverse
 from django.views import View
+
 
 class SignupView(View):
     def get(self, request, *args, **kwargs):
-        return HttpResponse(f'Sign up form.')
+        if not request.user.is_authenticated:
+            context = {
+                "form": UserCreationForm if not kwargs["form"] else kwargs["form"]
+            }
+
+            return render(request, "auth/signup.html", context)
+        return redirect(reverse("Home:index"))
 
     def post(self, request, *args, **kwargs):
-        return HttpResponse('Sign up post req.')
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            user = authenticate(
+                request,
+                username=form.cleaned_data["username"],
+                password=form.cleaned_data["password1"],
+            )
+            login(request, user)
+
+            return redirect(reverse("Home:index"))
+        return self.get(request, form=form)

@@ -1,7 +1,6 @@
-from django.http.response import HttpResponse
-from django.views import View
-from django.contrib.auth import views as auth_views
+from django.contrib.auth.views import LoginView
 
-class LoginView(auth_views.LoginView):
-    template_name = 'auth/login.html'
+
+class LoginView(LoginView):
+    template_name = "auth/login.html"
     redirect_authenticated_user = True

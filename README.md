@@ -67,4 +67,10 @@ List /list/<id:int>/
 
 
 # To-do:
-1. Login and Signup views. https://docs.djangoproject.com/en/3.2/topics/auth/default/
+1. View list VIEW.
+2. Create item VIEW (POST, GET), FORM
+3. Update list VIEW
+4. Delete list VIEW
+5. Update item VIEW
+6. Delete item VIEW
+7. Invite urls
