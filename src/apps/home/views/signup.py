@@ -9,7 +9,7 @@ class SignupView(View):
     def get(self, request, *args, **kwargs):
         if not request.user.is_authenticated:
             context = {
-                "form": UserCreationForm if not kwargs["form"] else kwargs["form"]
+                "form": kwargs.get("form") if "form" in kwargs else UserCreationForm
             }
 
             return render(request, "auth/signup.html", context)
