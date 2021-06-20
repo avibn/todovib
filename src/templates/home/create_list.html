@@ -1,7 +1,7 @@
 {% extends 'base/base.html' %}
 
 {% block body %}
-        <form action="{% url 'Home:create_list' %}" method="post">
+        <form method="post">
             {% csrf_token %}
             {{ form.as_ul }}
             <input type="submit">

@@ -16,6 +16,9 @@
             <a href="{% url 'List:view' list.id %}">
                 <button type="button">View</button>
             </a>
+            <a href="{% url 'List:update' list.id %}">
+                <button type="button">Update</button>
+            </a>
         </div>
         {% endfor %}
 

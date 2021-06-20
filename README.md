@@ -67,8 +67,6 @@ List /list/<id:int>/
 
 
 # To-do:
-3. Update list VIEW
 4. Delete list VIEW
-5. Update item VIEW
 6. Delete item VIEW
 7. Invite urls
