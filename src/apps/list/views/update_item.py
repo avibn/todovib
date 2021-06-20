@@ -18,7 +18,9 @@ class UpdateItemView(View):
     def post(self, request, list_id, item_id, *args, **kwargs):
         form = ListItemForm(request.POST)
         if form.is_valid():
-            item = get_object_or_404(ListItem, pk=item_id, todolist_id=list_id)
+            item = get_object_or_404(
+                ListItem, pk=item_id, todolist_id=list_id, todolist__owner=request.user
+            )
             item.name = form.cleaned_data["name"]
             item.description = form.cleaned_data["description"]
             item.save()
