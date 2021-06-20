@@ -8,7 +8,7 @@
         <br>
 
         <a href="{% url 'List:add_item' list.id %}">
-        <button type="button">Add Item</button>
+            <button type="button">Add Item</button>
         </a>
 
         {% for item in list.items.all %}
@@ -16,6 +16,9 @@
             <h3>Name: {{ item.name }}</h2>
             <h4>Description: {{ item.description }}</h4>
             <h6>Created at: {{ item.created_at|date:"D d M Y" }}</h6>
+            <a href="{% url 'List:update_item' list.id item.id %}">
+                <button type="button">Update Item</button>
+            </a>
         </div>
         {% endfor %}
 

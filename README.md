@@ -67,8 +67,6 @@ List /list/<id:int>/
 
 
 # To-do:
-1. View list VIEW.
-2. Create item VIEW (POST, GET), FORM
 3. Update list VIEW
 4. Delete list VIEW
 5. Update item VIEW
