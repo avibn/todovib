@@ -13,6 +13,9 @@
             <h2>{{ list.name }}</h2>
             <h4>{{ list.description }}</h4>
             <h6>{{ list.created_at|date:"D d M Y" }}</h6>
+            <a href="{% url 'List:view' list.id %}">
+                <button type="button">View</button>
+            </a>
         </div>
         {% endfor %}
 

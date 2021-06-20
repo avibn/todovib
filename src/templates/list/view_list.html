@@ -1,0 +1,22 @@
+{% extends 'base/base.html' %}
+
+{% block body %}
+        <div style="background-color: #fae3a5;">
+            <h1>LIST VIEW - {{ list.name }}</h1>
+            <h4>{{ list.description }}</h4>
+        </div>
+        <br>
+
+        <a href="{% url 'List:add_item' list.id %}">
+        <button type="button">Add Item</button>
+        </a>
+
+        {% for item in list.items.all %}
+        <div style="background-color: #fae3a5;">
+            <h3>Name: {{ item.name }}</h2>
+            <h4>Description: {{ item.description }}</h4>
+            <h6>Created at: {{ item.created_at|date:"D d M Y" }}</h6>
+        </div>
+        {% endfor %}
+
+{% endblock body %}
