@@ -17,7 +17,6 @@ class UpdateListView(View):
 
     def post(self, request, list_id, *args, **kwargs):
         form = CreateListForm(request.POST)
-        print(request.POST)
         if form.is_valid():
             todolist = get_object_or_404(TodoList, pk=list_id, owner=request.user)
             todolist.name = form.cleaned_data["name"]

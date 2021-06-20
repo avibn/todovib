@@ -19,6 +19,10 @@
             <a href="{% url 'List:update' list.id %}">
                 <button type="button">Update</button>
             </a>
+            <form action="{% url 'List:delete' list.id %}" method="post">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
         </div>
         {% endfor %}
 
