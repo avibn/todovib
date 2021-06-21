@@ -1,4 +1,9 @@
 {% extends 'base/base.html' %}
+{% load static %}
+
+{% block stylesheets %}
+        <link rel="stylesheet" href="{% static 'home.css' %}">
+{% endblock stylesheets %}
 
 {% block body %}
 
@@ -9,7 +14,7 @@
         </a>
 
         {% for list in lists %}
-        <div style="background-color: #fae3a5;">
+        <div class="list-card">
             <h2>{{ list.name }}</h2>
             <h4>{{ list.description }}</h4>
             <h6>{{ list.created_at|date:"D d M Y" }}</h6>

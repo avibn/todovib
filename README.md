@@ -62,11 +62,9 @@ List /list/<id:int>/
     POST <list_id:int>/item/<item_id:int>/update  Update item
     POST <list_id:int>/item/<item_id:int>/delete  Delete item form
     ---------------------------------------------------------
-    P̶O̶S̶T̶ <̶i̶d̶:̶i̶n̶t̶>̶/̶i̶n̶v̶i̶t̶e̶/̶c̶r̶e̶a̶t̶e̶/̶           C̶r̶e̶a̶t̶e̶s̶ a̶n̶ i̶n̶v̶i̶t̶e̶
-    P̶O̶S̶T̶ <̶i̶d̶:̶i̶n̶t̶>̶/̶i̶n̶v̶i̶t̶e̶/̶<̶i̶n̶v̶i̶t̶e̶_̶i̶d̶:̶i̶n̶t̶>̶/̶d̶e̶l̶e̶t̶e̶/̶           C̶r̶e̶a̶t̶e̶s̶ a̶n̶ i̶n̶v̶i̶t̶e̶
+    POST <id:int>/invite/create/           Creates an invite
+    POST <id:int>/invite/<invite_id:int>/delete/           Creates an invite
 
 
 # To-do:
-4. Delete list VIEW
-6. Delete item VIEW
 7. Invite urls

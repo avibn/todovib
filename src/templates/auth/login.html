@@ -1,7 +1,11 @@
-LOGIN
+{% extends 'base/base.html' %}
 
-<form action={% url 'Home:login' %} method="post">
-{% csrf_token %}
-{{ form }}
-<input type="submit">
-</form>
+{% block body %}
+        <h1>LOGIN</h1>
+
+        <form action={% url 'Home:login' %} method="post">
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit">
+        </form>
+{% endblock body %}
