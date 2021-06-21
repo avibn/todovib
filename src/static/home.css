@@ -1,3 +1,57 @@
+.list-grid {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
 .list-card {
-    background-color: #fae3a5;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;;
+    border-radius: 2rem;
+    width: 20rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.list-buttons {
+    /* align-self: flex-end; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: flex-end;
+}
+
+.list-buttons button {
+    margin: 0.1rem;
+    background-color: rgb(30, 166, 252);
+    color: #fff;
+    border: 0px;
+    border-radius: 10rem;
+    padding: 0.5rem;
+}
+
+.create-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-list button {
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+    border: 0px;
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    font-size: 4rem;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+body {
+    font-family: 'Montserrat';
+    font-weight: 400;
 }

@@ -7,28 +7,34 @@
 
 {% block body %}
 
-        <h1>HOME PAGE</h1>
+        {% comment %} <h1>HOME PAGE</h1> {% endcomment %}
 
-        <a href="{% url 'Home:create_list' %}">
-        <button type="button">Create List</button>
-        </a>
 
-        {% for list in lists %}
-        <div class="list-card">
-            <h2>{{ list.name }}</h2>
-            <h4>{{ list.description }}</h4>
-            <h6>{{ list.created_at|date:"D d M Y" }}</h6>
-            <a href="{% url 'List:view' list.id %}">
-                <button type="button">View</button>
-            </a>
-            <a href="{% url 'List:update' list.id %}">
-                <button type="button">Update</button>
-            </a>
-            <form action="{% url 'List:delete' list.id %}" method="post">
-                {% csrf_token %}
-                <button type="submit">Delete</button>
-            </form>
+        <div class="list-grid">
+            <div class="list-card create-list">
+                <a href="{% url 'Home:create_list' %}">
+                <button type="button">+</button>
+                </a>
+            </div>
+            {% for list in lists %}
+            <div class="list-card">
+                <h2>{{ list.name }}</h2>
+                <p>{{ list.description }}</p>
+                <p>{{ list.created_at|date:"D d M Y" }}</p>
+                <div class="list-buttons">
+                    <a href="{% url 'List:view' list.id %}">
+                        <button type="button">View</button>
+                    </a>
+                    <a href="{% url 'List:update' list.id %}">
+                        <button type="button">Update</button>
+                    </a>
+                    <form action="{% url 'List:delete' list.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Delete</button>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
 
 {% endblock body %}
