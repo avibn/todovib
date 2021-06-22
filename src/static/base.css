@@ -1,0 +1,31 @@
+body {
+    font-family: 'Montserrat';
+    font-weight: 400;
+}
+
+.button-main {
+    margin: 0.1rem;
+    background-color: rgb(30, 166, 252);
+    color: #fff;
+    border: 0px;
+    border-radius: 0.8rem;
+    padding: 0.5rem;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+
+.button-main:hover {
+    background-color: rgb(30, 135, 252);
+    cursor: pointer;
+}
+
+.button-main:active {
+    background-color: rgb(30, 120, 252);
+}
+
+.button-main:focus {
+    box-shadow: 0 0 0 3px rgb(125, 195, 238);
+    outline: none;
+}

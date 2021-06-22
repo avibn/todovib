@@ -1,9 +1,7 @@
 {% extends 'base/base.html' %}
 {% load static %}
 
-{% block title %}
-Dashboard - Todovib
-{% endblock title %}
+{% block title %}Dashboard - Todovib{% endblock title %}
 
 {% block stylesheets %}
         <link rel="stylesheet" href="{% static 'home.css' %}">
@@ -11,7 +9,7 @@ Dashboard - Todovib
 
 {% block body %}
 
-        <h1 style="text-align: center;">TODOVIB</h1>
+        <h1 style="text-align: center;">Lists</h1>
 
 
         <div class="list-grid">
@@ -26,15 +24,11 @@ Dashboard - Todovib
                 <p>{{ list.description }}</p>
                 <p>{{ list.created_at|date:"D d M Y" }}</p>
                 <div class="list-buttons">
-                    <form action="{% url 'List:view' list.id %}">
-                        <button type="submit">View</button>
-                    </form>
-                    <form action="{% url 'List:update' list.id %}">
-                        <button type="submit">Update</button>
-                    </form>
+                    <a class="button-main" href="{% url 'List:view' list.id %}">View</a>
+                    <a class="button-main" href="{% url 'List:update' list.id %}">Update</a>
                     <form action="{% url 'List:delete' list.id %}" method="post">
                         {% csrf_token %}
-                        <button type="submit">Delete</button>
+                        <button class="button-main" type="submit">Delete</button>
                     </form>
                 </div>
             </div>
