@@ -1,12 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>{% block title %}Todovob{% endblock title %}</title>
+        <title>{% block title %}Todovib{% endblock title %}</title>
         <meta name="description" content="{% block head_description %}To do list site.{% endblock head_description %}">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href=""> <!-- add base.css !-->
+        <link rel="stylesheet" href="{% static 'base.css' %}">
         {% block stylesheets %}{% endblock stylesheets %}
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;800&display=swap" rel="stylesheet">

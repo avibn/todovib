@@ -1,20 +1,24 @@
 {% extends 'base/base.html' %}
 {% load static %}
 
+{% block title %}
+Dashboard - Todovib
+{% endblock title %}
+
 {% block stylesheets %}
         <link rel="stylesheet" href="{% static 'home.css' %}">
 {% endblock stylesheets %}
 
 {% block body %}
 
-        {% comment %} <h1>HOME PAGE</h1> {% endcomment %}
+        <h1 style="text-align: center;">TODOVIB</h1>
 
 
         <div class="list-grid">
             <div class="list-card create-list">
-                <a href="{% url 'Home:create_list' %}">
-                <button type="button">+</button>
-                </a>
+                <form action="{% url 'Home:create_list' %}">
+                    <button type="submit">+</button>
+                </form>
             </div>
             {% for list in lists %}
             <div class="list-card">
@@ -22,12 +26,12 @@
                 <p>{{ list.description }}</p>
                 <p>{{ list.created_at|date:"D d M Y" }}</p>
                 <div class="list-buttons">
-                    <a href="{% url 'List:view' list.id %}">
-                        <button type="button">View</button>
-                    </a>
-                    <a href="{% url 'List:update' list.id %}">
-                        <button type="button">Update</button>
-                    </a>
+                    <form action="{% url 'List:view' list.id %}">
+                        <button type="submit">View</button>
+                    </form>
+                    <form action="{% url 'List:update' list.id %}">
+                        <button type="submit">Update</button>
+                    </form>
                     <form action="{% url 'List:delete' list.id %}" method="post">
                         {% csrf_token %}
                         <button type="submit">Delete</button>

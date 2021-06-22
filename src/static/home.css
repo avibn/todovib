@@ -33,6 +33,17 @@
     border-radius: 10rem;
     padding: 0.5rem;
 }
+.list-buttons button:hover {
+    background-color: rgb(30, 135, 252);
+    cursor: pointer;
+}
+.list-buttons button:active {
+    background-color: rgb(30, 120, 252);
+}
+.list-buttons button:focus {
+    box-shadow: 0 0 0 3px rgb(125, 195, 238);
+    outline: none;
+}
 
 .create-list {
     display: flex;
@@ -49,6 +60,11 @@
     border-radius: 50%;
     font-size: 4rem;
     color: rgba(0, 0, 0, 0.5);
+}
+
+.create-list button:hover {
+    background-color: rgb(240, 240, 240);
+    cursor: pointer;
 }
 
 body {
