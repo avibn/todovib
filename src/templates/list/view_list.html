@@ -1,33 +1,44 @@
 {% extends 'base/base.html' %}
 {% load static %}
 
+{% block title %}{{ list.name }} - Todovib{% endblock title %}
+
 {% block stylesheets %}
 <link rel="stylesheet" href="{% static 'view_list.css' %}">
 {% endblock stylesheets %}
 
 {% block body %}
-        <div style="background-color: #fae3a5; text-align:center;">
+        <div class="list-info">
             <h1>{{ list.name }}</h1>
-            <h4>{{ list.description }}</h4>
+            <p class="desc-light">{{ list.description }}</p>
         </div>
         <br>
 
-        <a class="button-main" href="{% url 'List:add_item' list.id %}">Add Item</a>
-
+        <a class="button-add-item" href="{% url 'List:add_item' list.id %}">+</a>
+        <p class="desc-light">Pending</p>
         {% for item in list.items.all %}
         <div class="item-card">
-            <div class="item-card-text">
-                <h3>{{ item.name }}</h2>
-                <p>{{ item.description }}</h4>
+            <div class="item-card-checkbox">
+                <div class="round">
+                    <input type="checkbox" id="checkbox{{ forloop.counter }}" />
+                    <label for="checkbox{{ forloop.counter }}"></label>
+                </div>
             </div>
-            <div class="item-card-buttons">
-                <a class="button-main" href="{% url 'List:update_item' list.id item.id %}">Update</a>
-                <form action="{% url 'List:delete_item' list.id item.id %}" method="post">
-                    {% csrf_token %}
-                    <button class="button-main" type="submit">Delete</button>
-                </form>
+            <div class="item-card-main">
+                <div class="item-card-text">
+                    <p>{{ item.name }}</p>
+                    <p class="desc-light">{{ item.description }}</p>
+                </div>
+                <div class="item-card-buttons">
+                    <a class="button-main" href="{% url 'List:update_item' list.id item.id %}">Update</a>
+                    <form action="{% url 'List:delete_item' list.id item.id %}" method="post">
+                        {% csrf_token %}
+                        <button class="button-main" type="submit">Delete</button>
+                    </form>
+                </div>
             </div>
         </div>
         {% endfor %}
+        <p class="desc-light">Finished</p>
 
 {% endblock body %}

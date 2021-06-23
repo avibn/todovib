@@ -1,6 +1,7 @@
 body {
     font-family: 'Montserrat';
     font-weight: 400;
+    background-color: rgb(247, 247, 247);
 }
 
 .button-main {
@@ -28,4 +29,8 @@ body {
 .button-main:focus {
     box-shadow: 0 0 0 3px rgb(125, 195, 238);
     outline: none;
+}
+
+.desc-light {
+    opacity: 0.65;
 }
