@@ -117,3 +117,35 @@
 .round input[type="checkbox"]:checked+label:after {
     opacity: 1;
 }
+
+
+/* Content section */
+
+.content {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.side-nav {
+    flex: 1 1 15%;
+    background-color: #fff;
+    padding: 1rem;
+    overflow: auto;
+}
+
+.main-container {
+    flex: 1 1 80%;
+    padding: 1rem;
+    overflow: auto;
+}
+
+.side-nav-card {
+    color: black;
+    padding: 0.02rem 0.3rem;
+    border-radius: 0.3rem;
+}
+
+.side-nav-card:hover {
+    background-color: rgb(247, 247, 247);
+}

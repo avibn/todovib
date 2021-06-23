@@ -2,6 +2,7 @@ body {
     font-family: 'Montserrat';
     font-weight: 400;
     background-color: rgb(247, 247, 247);
+    margin: 0;
 }
 
 .button-main {
