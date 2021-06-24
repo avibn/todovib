@@ -10,12 +10,16 @@
 {% block body %}
         <div class="content">
             <div class="side-nav">
-                <p>Lists</p>
+                <a href="{% url 'Home:index' %}" style="text-decoration:none;">
+                    <div class="side-nav-card">
+                        <p>Lists</p>
+                    </div>
+                </a>
                 <hr>
                 {% for todolist in all_lists %}
                 <a href="{% url 'List:view' todolist.id %}" style="text-decoration:none;">
                     <div class="side-nav-card">
-                        <p style="margin-bottom:0.5rem;">{{ todolist.name }}</p>
+                        <p style="margin-bottom:0.5rem; {% if todolist.id == list.id %}font-weight: 600;{% endif %}">{{ todolist.name }}</p>
                         <p class="desc-light" style="font-size:small;margin-top:0.1rem;">{{ todolist.items.all|length }} tasks</p>
                     </div>
                 <a>

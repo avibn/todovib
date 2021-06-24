@@ -13,7 +13,6 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
 }
 
 .button-add-item {
@@ -63,12 +62,6 @@
 
 .list-info {
     padding: 10px;
-}
-
-@media only screen and (max-width: 578px) {
-    .item-card {
-        padding: 1rem 1rem;
-    }
 }
 
 
@@ -148,4 +141,22 @@
 
 .side-nav-card:hover {
     background-color: rgb(247, 247, 247);
+}
+
+@media only screen and (max-width: 578px) {
+    .item-card {
+        padding: 1rem 1rem;
+    }
+    .content {
+        flex-direction: column;
+        height: 100vh;
+    }
+    .side-nav {
+        padding: 0;
+        flex: 0 1 0%;
+    }
+    .item-card-main {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
