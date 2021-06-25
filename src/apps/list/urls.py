@@ -20,4 +20,9 @@ urlpatterns = [
         login_required(DeleteItemView.as_view()),
         name="delete_item",
     ),
+    path(
+        "item/<int:item_id>/complete/",
+        login_required(CompleteItemView.as_view()),
+        name="complete_item",
+    ),
 ]

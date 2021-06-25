@@ -160,6 +160,10 @@
     border-radius: 0.3rem;
 }
 
+.side-nav-card i {
+    padding: 0 0.5rem 0 0;
+}
+
 .side-nav-card:hover {
     background-color: rgb(247, 247, 247);
 }

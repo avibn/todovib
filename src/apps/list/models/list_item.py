@@ -9,7 +9,13 @@ class ListItem(models.Model):
     )
     # tags, MANY TO MANY
     todolist = models.ForeignKey(
-        TodoList, on_delete=models.CASCADE, help_text="The list of the item.", related_name="items"
+        TodoList,
+        on_delete=models.CASCADE,
+        help_text="The list of the item.",
+        related_name="items",
+    )
+    completed = models.BooleanField(
+        default=False, help_text="The completion status of the task."
     )
     created_at = models.DateTimeField(auto_now_add=True)
 

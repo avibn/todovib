@@ -18,7 +18,7 @@
                 <div class="side-nav-main" id="side-nav-main">
                     <a href="{% url 'Home:index' %}" style="text-decoration:none;">
                         <div class="side-nav-card">
-                            <p>Lists</p>
+                            <p><i class="fas fa-home"></i>Lists</p>
                         </div>
                     </a>
                     <hr>
@@ -40,13 +40,17 @@
                 <a class="button-add-item" href="{% url 'List:add_item' list.id %}">+</a>
                 <p class="desc-light">Pending</p>
                 {% for item in list.items.all %}
+                {% if item.completed == False %}
                 <div class="item-card">
-                    <div class="item-card-checkbox">
-                        <div class="round">
-                            <input type="checkbox" id="checkbox{{ forloop.counter }}" />
-                            <label for="checkbox{{ forloop.counter }}"></label>
+                    <form action="{% url 'List:complete_item' list.id item.id %}" method="post">
+                        {% csrf_token %}
+                        <div class="item-card-checkbox">
+                            <div class="round">
+                                <input onChange="this.form.submit()" type="checkbox" id="checkbox{{ forloop.counter }}" />
+                                <label for="checkbox{{ forloop.counter }}"></label>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                     <div class="item-card-main">
                         <div class="item-card-text">
                             <p>{{ item.name }}</p>
@@ -61,8 +65,39 @@
                         </div>
                     </div>
                 </div>
+                {% endif %}
                 {% endfor %}
                 <p class="desc-light">Finished</p>
+                {% for item in list.items.all %}
+                {% if item.completed == True %}
+                <div class="item-card">
+                    <form action="{% url 'List:complete_item' list.id item.id %}" method="post">
+                        {% csrf_token %}
+                        <div class="item-card-checkbox">
+                            <div class="round">
+                                <input onChange="this.form.submit()" type="checkbox" id="checkbox{{ forloop.counter }}" checked=checked />
+                                <label for="checkbox{{ forloop.counter }}"></label>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="item-card-main">
+                        <s>
+                            <div class="item-card-text">
+                                <p>{{ item.name }}</p>
+                                <p class="desc-light">{{ item.description }}</p>
+                            </div>
+                        </s>
+                        <div class="item-card-buttons">
+                            <a class="button-main" href="{% url 'List:update_item' list.id item.id %}">Update</a>
+                            <form action="{% url 'List:delete_item' list.id item.id %}" method="post">
+                                {% csrf_token %}
+                                <button class="button-main" type="submit">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
 
