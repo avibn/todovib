@@ -9,21 +9,28 @@
 
 {% block body %}
         <div class="content">
-            <div class="side-nav">
-                <a href="{% url 'Home:index' %}" style="text-decoration:none;">
-                    <div class="side-nav-card">
-                        <p>Lists</p>
-                    </div>
-                </a>
-                <hr>
-                {% for todolist in all_lists %}
-                <a href="{% url 'List:view' todolist.id %}" style="text-decoration:none;">
-                    <div class="side-nav-card">
-                        <p style="margin-bottom:0.5rem; {% if todolist.id == list.id %}font-weight: 600;{% endif %}">{{ todolist.name }}</p>
-                        <p class="desc-light" style="font-size:small;margin-top:0.1rem;">{{ todolist.items.all|length }} tasks</p>
-                    </div>
-                <a>
-                {% endfor %}
+            <div class="side-nav" id="side-nav">
+                <div class="top-bar">
+                    <a class="toggle-button" id="menu-toggle">
+                    <i class="fa fa-bars"></i>
+                    </a>
+                </div>
+                <div class="side-nav-main" id="side-nav-main">
+                    <a href="{% url 'Home:index' %}" style="text-decoration:none;">
+                        <div class="side-nav-card">
+                            <p>Lists</p>
+                        </div>
+                    </a>
+                    <hr>
+                    {% for todolist in all_lists %}
+                    <a href="{% url 'List:view' todolist.id %}" style="text-decoration:none;">
+                        <div class="side-nav-card">
+                            <p style="margin-bottom:0.5rem; {% if todolist.id == list.id %}font-weight: 600;{% endif %}">{{ todolist.name }}</p>
+                            <p class="desc-light" style="font-size:small;margin-top:0.1rem;">{{ todolist.items.all|length }} tasks</p>
+                        </div>
+                    <a>
+                    {% endfor %}
+                </div>
             </div>
             <div class="main-container">
                 <div class="list-info">
@@ -60,3 +67,7 @@
         </div>
 
 {% endblock body %}
+
+{% block scripts %}
+<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+{% endblock scripts %}
