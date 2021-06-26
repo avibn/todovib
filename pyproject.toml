@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "todovib"
+version = "0.1.0"
+description = ""
+authors = ["avib"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+Django = "^3.2.4"
+
+[tool.poetry.dev-dependencies]
+black = "^21.6b0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
