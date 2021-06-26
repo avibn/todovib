@@ -68,7 +68,7 @@ Now go to http://127.0.0.1:8000/signup/ and create an account. You will then be 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
 - [Django](https://www.djangoproject.com/) - Web framework
-- [SQLite](https://www.sqlite.org/index.html) - Server Framework
+- [SQLite](https://www.sqlite.org/index.html) - Database
 
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
