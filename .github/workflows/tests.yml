@@ -23,6 +23,7 @@ jobs:
         run: |
           pip install poetry
           poetry install
+          poetry shell
 
       - name: Lint with black
         run: |
