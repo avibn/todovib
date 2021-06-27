@@ -6,13 +6,15 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('list', '0001_added_lists'),
+        ("list", "0001_added_lists"),
     ]
 
     operations = [
         migrations.AddField(
-            model_name='listitem',
-            name='completed',
-            field=models.BooleanField(default=False, help_text='The completion status of the task.'),
+            model_name="listitem",
+            name="completed",
+            field=models.BooleanField(
+                default=False, help_text="The completion status of the task."
+            ),
         ),
     ]

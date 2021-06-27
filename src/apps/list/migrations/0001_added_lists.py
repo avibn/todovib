@@ -15,23 +15,77 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='TodoList',
+            name="TodoList",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.TextField(help_text='The name of the list.', max_length=50)),
-                ('description', models.TextField(blank=True, help_text='The description of the list.', max_length=318, null=True)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('owner', models.ForeignKey(help_text='The owner of the list.', on_delete=django.db.models.deletion.CASCADE, related_name='lists', to=settings.AUTH_USER_MODEL)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "name",
+                    models.TextField(help_text="The name of the list.", max_length=50),
+                ),
+                (
+                    "description",
+                    models.TextField(
+                        blank=True,
+                        help_text="The description of the list.",
+                        max_length=318,
+                        null=True,
+                    ),
+                ),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                (
+                    "owner",
+                    models.ForeignKey(
+                        help_text="The owner of the list.",
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="lists",
+                        to=settings.AUTH_USER_MODEL,
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='ListItem',
+            name="ListItem",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.TextField(help_text='The name of the item.', max_length=50)),
-                ('description', models.TextField(blank=True, help_text='The description of the item.', max_length=318, null=True)),
-                ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('todolist', models.ForeignKey(help_text='The list of the item.', on_delete=django.db.models.deletion.CASCADE, related_name='items', to='list.todolist')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "name",
+                    models.TextField(help_text="The name of the item.", max_length=50),
+                ),
+                (
+                    "description",
+                    models.TextField(
+                        blank=True,
+                        help_text="The description of the item.",
+                        max_length=318,
+                        null=True,
+                    ),
+                ),
+                ("created_at", models.DateTimeField(auto_now_add=True)),
+                (
+                    "todolist",
+                    models.ForeignKey(
+                        help_text="The list of the item.",
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="items",
+                        to="list.todolist",
+                    ),
+                ),
             ],
         ),
     ]
