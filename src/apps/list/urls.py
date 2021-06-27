@@ -8,7 +8,6 @@ urlpatterns = [
     path("", login_required(ViewList.as_view()), name="view"),
     path("update/", login_required(UpdateListView.as_view()), name="update"),
     path("delete/", login_required(DeleteListView.as_view()), name="delete"),
-
     path("item/add/", login_required(AddItemView.as_view()), name="add_item"),
     path(
         "item/<int:item_id>/update/",

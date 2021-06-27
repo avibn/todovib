@@ -27,10 +27,9 @@
 - [Built Using](#built_using)
 - [Acknowledgments](#acknowledgement)
 
-<!-- ## 🧐 About <a name = "about"></a>
+## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project. -->
-
+This is a simple todo list site created using Django and basic html css for the frontend.
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -50,8 +49,8 @@ poetry shell
 ```
 
 ### Running
-
-Create the database:
+Firstly, create a file called `my_secrets.py` in the src folder. A template is provided in `my_secrets.example.py` to assist you. <br>
+Then, create the database:
 ```
 python manage.py migrate
 ```

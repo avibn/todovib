@@ -8,7 +8,10 @@ class TodoList(models.Model):
         max_length=318, null=True, blank=True, help_text="The description of the list."
     )
     owner = models.ForeignKey(
-        User, on_delete=models.CASCADE, help_text="The owner of the list.", related_name="lists"
+        User,
+        on_delete=models.CASCADE,
+        help_text="The owner of the list.",
+        related_name="lists",
     )
     created_at = models.DateTimeField(auto_now_add=True)
 
