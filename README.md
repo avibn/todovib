@@ -30,6 +30,7 @@
 ## 🧐 About <a name = "about"></a>
 
 This is a simple todo list site created using Django and basic html css for the frontend.
+<img src="https://i.imgur.com/zzWd9IU.png" width="600">
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
