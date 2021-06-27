@@ -23,10 +23,9 @@ jobs:
         run: |
           pip install poetry
           poetry install
-          poetry shell
 
       - name: Lint with black
         run: |
-          black . --check
+          poetry run black . --check
       
       # Add coverage report, django testing
